@@ -26,7 +26,7 @@ func TestExePathOps(t *testing.T) {
     fmt.Println()
     fmt.Println("============ TestExePathOps ============")
 
-    appName := GetAppName()
+    appName := GetName()
     if len(appName) < 1 {
         t.Error("appName len < 1")
     }

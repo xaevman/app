@@ -16,6 +16,7 @@ import (
     "errors"
     "fmt"
     "os"
+    "path"
     "strconv"
     "sync"
 )
@@ -113,9 +114,5 @@ func SetPidBaseDir(path string) {
 func getPidFilePath() string {
     baseDir := GetPidBaseDir()
 
-    return fmt.Sprintf(
-        "%s/%s.pid",
-        baseDir,
-        GetAppName(),
-    )
+    return path.Join(baseDir, GetName() + ".pid")
 }

@@ -1,4 +1,4 @@
-# ![app]
+# App
 
 ## Overview
 App is a Go package which provides some additional capability for gathering information about the executing application.

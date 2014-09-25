@@ -20,15 +20,6 @@ import (
     "os/exec"
 )
 
-// GetAppName returns the name of the executing application, as parsed from
-// the executing binary's file name.
-func GetAppName() string {
-    fn  := GetExeFile()
-    ext := filepath.Ext(fn)
-
-    return fn[:len(fn) - len(ext)]
-}
-
 // GetExeDir returns the base directory of the executing binary.
 func GetExeDir() string {
     return filepath.Dir(GetExePath())
@@ -58,6 +49,15 @@ func GetExePath() string {
     }
     
     return os.Args[0]
+}
+
+// GetName returns the name of the executing application, as parsed from
+// the executing binary's file name.
+func GetName() string {
+    fn  := GetExeFile()
+    ext := filepath.Ext(fn)
+
+    return fn[:len(fn) - len(ext)]
 }
 
 // GetRunStatus attempts to read the application pid file and check the status

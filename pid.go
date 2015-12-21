@@ -28,6 +28,7 @@ const NoPid = -1
 // Module errors
 var PidParseErr = errors.New("Unable to parse pid file")
 
+// Module vars
 var (
     basePidDir string
     pdMutex    sync.RWMutex

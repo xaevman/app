@@ -87,7 +87,7 @@ func GetRunStatus() *os.Process {
 		return p
 	}
 
-	if strings.ToLower(GetExeFile()) != strings.ToLower(proc.Executable()) {
+	if proc == nil || (strings.ToLower(GetExeFile()) != strings.ToLower(proc.Executable())) {
 		// pid exists, but is tied to a different application now
 		DeletePidFile()
 		return nil
